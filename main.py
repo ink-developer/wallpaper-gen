@@ -53,7 +53,7 @@ async def wildlife():
         SPI_SETDESKWALLPAPER = 0x14
         SPIF_UPDATEINIFILE = 0x2
         ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path , SPIF_UPDATEINIFILE)
-        print("Successfully\nwidth 1920, height 1080")
+        print("Successfully\nwidth 2560, height 1440")
         await asyncio.sleep(3)
 
 
@@ -78,7 +78,7 @@ async def abstract():
         SPI_SETDESKWALLPAPER = 0x14
         SPIF_UPDATEINIFILE = 0x2
         ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path , SPIF_UPDATEINIFILE)
-        print("Successfully\nwidth 1920, height 1080")
+        print("Successfully\nwidth 2560, height 1440")
         await asyncio.sleep(3)
 
 
@@ -103,7 +103,7 @@ async def still_life():
         SPI_SETDESKWALLPAPER = 0x14
         SPIF_UPDATEINIFILE = 0x2
         ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path , SPIF_UPDATEINIFILE)
-        print("Successfully\nwidth 1920, height 1080")
+        print("Successfully\nwidth 2560, height 1440")
         await asyncio.sleep(3)
 
 
@@ -128,7 +128,7 @@ async def food():
         SPI_SETDESKWALLPAPER = 0x14
         SPIF_UPDATEINIFILE = 0x2
         ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path , SPIF_UPDATEINIFILE)
-        print("Successfully\nwidth 1920, height 1080")
+        print("Successfully\nwidth 2560, height 1440")
         await asyncio.sleep(3)
 
 
@@ -153,7 +153,7 @@ async def city():
            SPI_SETDESKWALLPAPER = 0x14
            SPIF_UPDATEINIFILE = 0x2
            ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path , SPIF_UPDATEINIFILE)
-           print("Successfully\nwidth 1920, height 1080")
+           print("Successfully\nwidth 2560, height 1440")
            await asyncio.sleep(3)
 
 
@@ -178,7 +178,7 @@ async def technology():
         SPI_SETDESKWALLPAPER = 0x14
         SPIF_UPDATEINIFILE = 0x2
         ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path , SPIF_UPDATEINIFILE)
-        print("Successfully\nwidth 1920, height 1080")
+        print("Successfully\nwidth 2560, height 1440")
         await asyncio.sleep(3)
     
 
@@ -203,7 +203,7 @@ async def nature():
         SPI_SETDESKWALLPAPER = 0x14
         SPIF_UPDATEINIFILE = 0x2
         ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path , SPIF_UPDATEINIFILE)
-        print("Successfully\nwidth 1920, height 1080")
+        print("Successfully\nwidth 2560, height 1440")
         await asyncio.sleep(3)
     
 
