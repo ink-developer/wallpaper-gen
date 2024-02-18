@@ -248,15 +248,16 @@ async def cats():
 
 
 async def main():
-    print(f"""{magenta}
+    while True:
+        print(f"""{magenta}
     ____      __      _       __      ____                                
    /  _/___  / /__   | |     / /___ _/ / /___  ____ _____  ___  __________
    / // __ \/ //_/   | | /| / / __ `/ / / __ \/ __ `/ __ \/ _ \/ ___/ ___/
  _/ // / / / ,<      | |/ |/ / /_/ / / / /_/ / /_/ / /_/ /  __/ /  (__  ) 
 /___/_/ /_/_/|_|     |__/|__/\__,_/_/_/ .___/\__,_/ .___/\___/_/  /____/  
                                      /_/         /_/                    
-    """)
-    print(f"""{reset}{cyan}
+        """)
+        print(f"""{reset}{cyan}
         Choose variant
           
       1. Cats (not stable idk)
@@ -269,37 +270,28 @@ async def main():
       8. Wildlife
       (1-8)
 {reset}""")
-    choose = input()
+        choose = input()
 
-    if choose == "1":
-        await cats()
-        await main()
-    elif choose == "2":
-        await nature()
-        await main()
-    elif choose == "3":
-        await city()
-        await main()
-    elif choose == "4":
-        await technology()
-        await main()
-    elif choose == "5":
-        await food()
-        await main()
-    elif choose == "6":
-        await still_life()
-        await main()
-    elif choose == "7":
-        await abstract()
-        await main()
-    elif choose == "8":
-        await wildlife()
-        await main()    
-    else:
-        print(f"{red}Choose from 1 to 8!")
-        await asyncio.sleep(1)
-        clear = lambda: os.system('cls')
-        clear()
-        await main()
+        if choose == "1":
+            await cats()
+        elif choose == "2":
+            await nature()
+        elif choose == "3":
+            await city()
+        elif choose == "4":
+            await technology()
+        elif choose == "5":
+            await food()
+        elif choose == "6":
+            await still_life()
+        elif choose == "7":
+            await abstract()
+        elif choose == "8":
+            await wildlife()
+        else:
+            print(f"{red}Choose from 1 to 8!")
+            await asyncio.sleep(1)
+            clear = lambda: os.system('cls')
+            clear()
 
 asyncio.run(main())
