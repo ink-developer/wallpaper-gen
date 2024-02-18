@@ -300,7 +300,5 @@ async def main():
         else:
             print(f"{red}Choose from 1 to 8!")
             await asyncio.sleep(1)
-            
-            clear()
 
 asyncio.run(main())
