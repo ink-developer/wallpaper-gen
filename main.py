@@ -6,14 +6,14 @@ import winreg
 from colorama import Fore
 import shutil
 import asyncio
-from config import CAT_API, NINJAS_API
+import config
 
 headars = {
-    'x-api-key' : CAT_API
+    "x-api-key": config.CAT_API
 }
 
 header2 = {
-    "X-Api-Key": NINJAS_API,
+    "X-Api-Key": config.NINJAS_API,
     "Accept": "image/jpg"
 }
 
@@ -36,7 +36,7 @@ async def wildlife():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=wildlife&width=2560&height=1440", headers=header2, stream=True)
@@ -61,7 +61,7 @@ async def abstract():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=abstract&width=2560&height=1440", headers=header2, stream=True)
@@ -86,7 +86,7 @@ async def still_life():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=still_life&width=2560&height=1440", headers=header2, stream=True)
@@ -111,7 +111,7 @@ async def food():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=food&width=2560&height=1440", headers=header2, stream=True)
@@ -136,7 +136,7 @@ async def city():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=city&width=2560&height=1440", headers=header2, stream=True)
@@ -161,7 +161,7 @@ async def technology():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=technology&width=2560&height=1440", headers=header2, stream=True)
@@ -186,7 +186,7 @@ async def nature():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=nature&width=2560&height=1440", headers=header2, stream=True)
@@ -215,7 +215,7 @@ async def cats():
         try:
             os.remove("./images/wallpaper.jpg")
         except FileNotFoundError:
-            print("Cant delete picture")
+            print("Can't delete picture")
             
         try:
             resp = requests.get("https://api.thecatapi.com/v1/images/search?limit=1", headers=headars).json()
@@ -226,7 +226,7 @@ async def cats():
         width = resp[0]["width"]
         height = resp[0]["height"]
         img2 = requests.get(img)
-        if width == round(1.777777777777778 * height) and not img.endswith(".gif"):
+        if width == round(config.RATIO * height) and not img.endswith(".gif"):
                 with open("./images/" + img.split("/")[-1], "wb") as file:
                     img3 = img.split("/")[-1]
                     file.write(img2.content)
@@ -248,15 +248,16 @@ async def cats():
 
 
 async def main():
-    print(f"""{magenta}
+    while True:
+        print(f"""{magenta}
     ____      __      _       __      ____                                
    /  _/___  / /__   | |     / /___ _/ / /___  ____ _____  ___  __________
    / // __ \/ //_/   | | /| / / __ `/ / / __ \/ __ `/ __ \/ _ \/ ___/ ___/
  _/ // / / / ,<      | |/ |/ / /_/ / / / /_/ / /_/ / /_/ /  __/ /  (__  ) 
 /___/_/ /_/_/|_|     |__/|__/\__,_/_/_/ .___/\__,_/ .___/\___/_/  /____/  
                                      /_/         /_/                    
-    """)
-    print(f"""{reset}{cyan}
+        """)
+        print(f"""{reset}{cyan}
         Choose variant
           
       1. Cats (not stable idk)
@@ -269,37 +270,28 @@ async def main():
       8. Wildlife
       (1-8)
 {reset}""")
-    choose = input()
+        choose = input()
 
-    if choose == "1":
-        await cats()
-        await main()
-    elif choose == "2":
-        await nature()
-        await main()
-    elif choose == "3":
-        await city()
-        await main()
-    elif choose == "4":
-        await technology()
-        await main()
-    elif choose == "5":
-        await food()
-        await main()
-    elif choose == "6":
-        await still_life()
-        await main()
-    elif choose == "7":
-        await abstract()
-        await main()
-    elif choose == "8":
-        await wildlife()
-        await main()    
-    else:
-        print(f"{red}Choose from 1 to 8!")
-        await asyncio.sleep(1)
-        clear = lambda: os.system('cls')
-        clear()
-        await main()
+        if choose == "1":
+            await cats()
+        elif choose == "2":
+            await nature()
+        elif choose == "3":
+            await city()
+        elif choose == "4":
+            await technology()
+        elif choose == "5":
+            await food()
+        elif choose == "6":
+            await still_life()
+        elif choose == "7":
+            await abstract()
+        elif choose == "8":
+            await wildlife()
+        else:
+            print(f"{red}Choose from 1 to 8!")
+            await asyncio.sleep(1)
+            clear = lambda: os.system('cls')
+            clear()
 
 asyncio.run(main())
