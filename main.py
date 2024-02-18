@@ -6,14 +6,14 @@ import winreg
 from colorama import Fore
 import shutil
 import asyncio
-from config import CAT_API, NINJAS_API
+import config
 
 headars = {
-    'x-api-key' : CAT_API
+    "x-api-key": config.CAT_API
 }
 
 header2 = {
-    "X-Api-Key": NINJAS_API,
+    "X-Api-Key": config.NINJAS_API,
     "Accept": "image/jpg"
 }
 
@@ -36,7 +36,7 @@ async def wildlife():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=wildlife&width=2560&height=1440", headers=header2, stream=True)
@@ -61,7 +61,7 @@ async def abstract():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=abstract&width=2560&height=1440", headers=header2, stream=True)
@@ -86,7 +86,7 @@ async def still_life():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=still_life&width=2560&height=1440", headers=header2, stream=True)
@@ -111,7 +111,7 @@ async def food():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=food&width=2560&height=1440", headers=header2, stream=True)
@@ -136,7 +136,7 @@ async def city():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=city&width=2560&height=1440", headers=header2, stream=True)
@@ -161,7 +161,7 @@ async def technology():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=technology&width=2560&height=1440", headers=header2, stream=True)
@@ -186,7 +186,7 @@ async def nature():
     try:
         os.remove("./images/wallpaper.jpg")
     except FileNotFoundError:
-        print("Cant delete picture")
+        print("Can't delete picture")
     global gen, header2
     try:
         resp = requests.get("https://api.api-ninjas.com/v1/randomimage?category=nature&width=2560&height=1440", headers=header2, stream=True)
@@ -215,7 +215,7 @@ async def cats():
         try:
             os.remove("./images/wallpaper.jpg")
         except FileNotFoundError:
-            print("Cant delete picture")
+            print("Can't delete picture")
             
         try:
             resp = requests.get("https://api.thecatapi.com/v1/images/search?limit=1", headers=headars).json()
@@ -226,7 +226,7 @@ async def cats():
         width = resp[0]["width"]
         height = resp[0]["height"]
         img2 = requests.get(img)
-        if width == round(1.777777777777778 * height) and not img.endswith(".gif"):
+        if width == round(config.RATIO * height) and not img.endswith(".gif"):
                 with open("./images/" + img.split("/")[-1], "wb") as file:
                     img3 = img.split("/")[-1]
                     file.write(img2.content)
