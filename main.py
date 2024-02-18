@@ -220,7 +220,7 @@ async def cats():
         try:
             resp = requests.get("https://api.thecatapi.com/v1/images/search?limit=1", headers=headars).json()
         except requests.RequestsJSONDecodeError:
-            print("Рейт лимит")
+            print("Json error (can be limit or ban)")
         print("Получил ответ")
         img = resp[0]["url"]
         width = resp[0]["width"]
@@ -229,13 +229,10 @@ async def cats():
         if width == round(1.777777777777778 * height) and not img.endswith(".gif"):
                 with open("./images/" + img.split("/")[-1], "wb") as file:
                     img3 = img.split("/")[-1]
-                    print("0 получил " + img3)
                     file.write(img2.content)
                     file.close()
-                    print("1 Получил " + img3)
                     os.rename("./images/" + img.split("/")[-1]  , "./images/wallpaper.jpg")
                     gen = False
-                    print("Успешно записал файл!")
                     path = os.path.abspath("./images/wallpaper/jpg")
                     key = r"Control Panel\Desktop"
                     value_name = "Wallpaper"
