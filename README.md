@@ -2,7 +2,7 @@
 
 Wallpaper generator
 
-# Who to set up
+# How to set up
 
 Go to config.py
 
