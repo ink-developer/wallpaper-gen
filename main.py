@@ -45,7 +45,7 @@ async def wildlife():
     with open('./images/wallpaper.jpg', 'wb') as file:
         shutil.copyfileobj(resp.raw, file)
         file.close()
-        path = os.path.abspath("./images/wallpaper/jpg")
+        path = os.path.abspath("./images/wallpaper.jpg")
         key = r"Control Panel\Desktop"
         value_name = "Wallpaper"
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key, 0, winreg.KEY_WRITE) as reg_key:
@@ -70,7 +70,7 @@ async def abstract():
     with open('./images/wallpaper.jpg', 'wb') as file:
         shutil.copyfileobj(resp.raw, file)
         file.close()
-        path = os.path.abspath("./images/wallpaper/jpg")
+        path = os.path.abspath("./images/wallpaper.jpg")
         key = r"Control Panel\Desktop"
         value_name = "Wallpaper"
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key, 0, winreg.KEY_WRITE) as reg_key:
@@ -95,7 +95,7 @@ async def still_life():
     with open('./images/wallpaper.jpg', 'wb') as file:
         shutil.copyfileobj(resp.raw, file)
         file.close()
-        path = os.path.abspath("./images/wallpaper/jpg")
+        path = os.path.abspath("./images/wallpaper.jpg")
         key = r"Control Panel\Desktop"
         value_name = "Wallpaper"
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key, 0, winreg.KEY_WRITE) as reg_key:
@@ -120,7 +120,7 @@ async def food():
     with open('./images/wallpaper.jpg', 'wb') as file:
         shutil.copyfileobj(resp.raw, file)
         file.close()
-        path = os.path.abspath("./images/wallpaper/jpg")
+        path = os.path.abspath("./images/wallpaper.jpg")
         key = r"Control Panel\Desktop"
         value_name = "Wallpaper"
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key, 0, winreg.KEY_WRITE) as reg_key:
@@ -145,7 +145,7 @@ async def city():
     with open('./images/wallpaper.jpg', 'wb') as file:
            shutil.copyfileobj(resp.raw, file)
            file.close()
-           path = os.path.abspath("./images/wallpaper/jpg")
+           path = os.path.abspath("./images/wallpaper.jpg")
            key = r"Control Panel\Desktop"
            value_name = "Wallpaper"
            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key, 0, winreg.KEY_WRITE) as reg_key:
@@ -170,7 +170,7 @@ async def technology():
     with open('./images/wallpaper.jpg', 'wb') as file:
         shutil.copyfileobj(resp.raw, file)
         file.close()
-        path = os.path.abspath("./images/wallpaper/jpg")
+        path = os.path.abspath("./images/wallpaper.jpg")
         key = r"Control Panel\Desktop"
         value_name = "Wallpaper"
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key, 0, winreg.KEY_WRITE) as reg_key:
@@ -195,7 +195,7 @@ async def nature():
     with open('./images/wallpaper.jpg', 'wb') as file:
         shutil.copyfileobj(resp.raw, file)
         file.close()
-        path = os.path.abspath("./images/wallpaper/jpg")
+        path = os.path.abspath("./images/wallpaper.jpg")
         key = r"Control Panel\Desktop"
         value_name = "Wallpaper"
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key, 0, winreg.KEY_WRITE) as reg_key:
@@ -233,7 +233,7 @@ async def cats():
                     file.close()
                     os.rename("./images/" + img.split("/")[-1]  , "./images/wallpaper.jpg")
                     gen = False
-                    path = os.path.abspath("./images/wallpaper/jpg")
+                    path = os.path.abspath("./images/wallpaper.jpg")
                     key = r"Control Panel\Desktop"
                     value_name = "Wallpaper"
                     with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key, 0, winreg.KEY_WRITE) as reg_key:
