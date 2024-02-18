@@ -270,28 +270,37 @@ async def main():
       8. Wildlife
       (1-8)
 {reset}""")
+        clear = lambda: os.system('cls')
         choose = input()
 
         if choose == "1":
             await cats()
+            clear()
         elif choose == "2":
             await nature()
+            clear()
         elif choose == "3":
             await city()
+            clear()
         elif choose == "4":
             await technology()
+            clear()
         elif choose == "5":
             await food()
+            clear()
         elif choose == "6":
             await still_life()
+            clear()
         elif choose == "7":
             await abstract()
+            clear()
         elif choose == "8":
             await wildlife()
+            clear()
         else:
             print(f"{red}Choose from 1 to 8!")
             await asyncio.sleep(1)
-            clear = lambda: os.system('cls')
+            
             clear()
 
 asyncio.run(main())
