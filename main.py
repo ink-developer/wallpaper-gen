@@ -105,9 +105,10 @@ async def cats():
         else:
             print("The picture doesn't fit")
 
-
 async def main():
+    clear = lambda: os.system("cls")
     while True:
+        clear()
         print(f"""{magenta}
     ____      __      _       __      ____                                
    /  _/___  / /__   | |     / /___ _/ / /___  ____ _____  ___  __________
@@ -129,35 +130,25 @@ async def main():
       8. Wildlife
       (1-8)
 {reset}""")
-        clear = lambda: os.system('cls')
-        
 
         choose = input()
 
         if choose == "1":
             await cats()
-            clear()
         elif choose == "2":
             await ninjas("nature")
-            clear()
         elif choose == "3":
             await ninjas("city")
-            clear()
         elif choose == "4":
             await ninjas("technology")
-            clear()
         elif choose == "5": 
             await ninjas("food")
-            clear()
         elif choose == "6":
             await ninjas("still_life")
-            clear()
         elif choose == "7":
             await ninjas("abstract")
-            clear()
         elif choose == "8":
             await ninjas("wildlife")
-            clear()
         else:
             print(f"{red}Choose from 1 to 8!{reset}")
             await asyncio.sleep(1)
