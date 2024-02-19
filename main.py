@@ -6,6 +6,7 @@ from colorama import Fore
 import shutil
 import asyncio
 import config
+from requests.exceptions import JSONDecodeError
 
 headars = {
     "x-api-key": config.CAT_API
@@ -80,7 +81,7 @@ async def cats():
             
         try:
             resp = requests.get("https://api.thecatapi.com/v1/images/search?limit=1", headers=headars).json()
-        except requests.RequestsJSONDecodeError:
+        except JSONDecodeError:
             print("Json error (can be limit or ban)")
         print("Got answer")
         img = resp[0]["url"]
