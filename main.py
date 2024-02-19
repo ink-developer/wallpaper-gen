@@ -133,7 +133,9 @@ async def main():
       8. Wildlife
       (1-8)
 {reset}""")
-
+        if config.CAT_API == "" or config.NINJAS_API == "":
+            print(f"{red}You need api key!\nPlease conigurate Config.py")
+            
         choose = input()
 
         if choose == "1":
