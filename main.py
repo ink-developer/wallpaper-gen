@@ -40,7 +40,7 @@ height = config.HEIGHT
 SPI_SETDESKWALLPAPER = 0x14
 SPIF_UPDATEINIFILE = 0x2 
 
-#53463
+picDelete = True
 
 async def ninjas(type: str):
     try:
@@ -73,11 +73,13 @@ async def cats():
 
     global gen
     while gen == True:
-        
-        try:
-            os.remove("./images/wallpaper.jpg")
-        except FileNotFoundError:
-            print("Can't delete picture")
+        if picDelete == True:
+            try:
+                os.remove("./images/wallpaper.jpg")
+                picDelete = False
+            except FileNotFoundError:
+                print("Can't delete picture")
+                picDelete = False
             
         try:
             resp = requests.get("https://api.thecatapi.com/v1/images/search?limit=1", headers=headars).json()
